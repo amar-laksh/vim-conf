@@ -57,6 +57,7 @@ Plug 'plasticboy/vim-markdown'
 " Plug 'xuhdev/vim-latex-live-preview'
 " Plug 'vim-latex/vim-latex'
 Plug 'lervag/vimtex'
+Plug 'plasticboy/vim-markdown'
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fun Stuff Plugins
