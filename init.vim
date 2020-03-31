@@ -58,7 +58,7 @@ Plug 'plasticboy/vim-markdown'
 " Plug 'vim-latex/vim-latex'
 Plug 'lervag/vimtex'
 Plug 'plasticboy/vim-markdown'
-"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fun Stuff Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

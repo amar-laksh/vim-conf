@@ -22,7 +22,7 @@ let g:header_auto_add_header = 0
 " => TagBar
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:header_field_author = 'Amar Lakshya'
-autocmd VimEnter * TagbarToggle
+" autocmd VimEnter * TagbarToggle
 
 
 
@@ -170,3 +170,7 @@ let g:vimtex_compiler_latexrun = {
         \   '-interaction=nonstopmode' ,
         \ ],
         \}
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Git Gutter
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
