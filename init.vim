@@ -58,6 +58,9 @@ Plug 'plasticboy/vim-markdown'
 " Plug 'vim-latex/vim-latex'
 Plug 'lervag/vimtex'
 Plug 'plasticboy/vim-markdown'
+Plug 'skywind3000/asyncrun.vim'
+" Plug 'tpope/vim-dispatch'
+Plug 'milkypostman/vim-togglelist'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fun Stuff Plugins

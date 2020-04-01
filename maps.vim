@@ -26,3 +26,4 @@ nmap <F3> :NERDTreeToggle<CR>
 nmap <F4> :AddHeader<CR>
 nmap <F5> :Codi<CR>
 nmap <F8> :TagbarToggle<CR>
+nmap <F9> :call ToggleQuickfixList()<CR>
