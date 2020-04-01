@@ -20,4 +20,4 @@
 set -o nounset                                  # Treat unset variables as an error
 
 cp -R $PWD ~/.vim-conf && \
-	cd ~/.vim-conf/ && ln -s .vimrc ~/.vimrc
+	cd ~/.vim-conf/ && ln -s ~/.vim-conf/.vimrc ~/.vimrc
