@@ -24,5 +24,5 @@ map <C-g> :e#<CR>
 nmap <F2> :Git<CR>
 nmap <F3> :NERDTreeToggle<CR>
 nmap <F4> :AddHeader<CR>
-nmap <F5> :Codi!<CR>
+nmap <F5> :Codi<CR>
 nmap <F8> :TagbarToggle<CR>
