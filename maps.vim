@@ -13,17 +13,24 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <C-l> :ls<CR>
-map <C-b> :bp<CR>
-map <C-f> :bn<CR>
-map <C-g> :e#<CR>
+nnoremap <C-l> :ls<CR>
+nnoremap <C-b> :bp<CR>
+nnoremap <C-f> :bn<CR>
+nnoremap <C-g> :e#<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Lines Manipulation
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap ,0 :g/^$/d
+nnoremap ,1 :g/^\s*$/o
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Function Key Maps
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <F2> :Git<CR>
-nmap <F3> :NERDTreeToggle<CR>
-nmap <F4> :AddHeader<CR>
-nmap <F5> :Codi<CR>
-nmap <F8> :TagbarToggle<CR>
-nmap <F9> :call ToggleQuickfixList()<CR>
+nnoremap <F2> :Git<CR>
+nnoremap <F3> :NERDTreeToggle<CR>
+nnoremap <F4> :AddHeader<CR>
+nnoremap <F5> :Codi<CR>
+nnoremap <F8> :TagbarToggle<CR>
+nnoremap <F9> :call ToggleQuickfixList()<CR>
