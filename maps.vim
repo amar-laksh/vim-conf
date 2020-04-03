@@ -21,9 +21,10 @@ nnoremap <C-g> :e#<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Lines Manipulation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap ,0 :g/^$/d
-nnoremap ,1 :g/^\s*$/o
-
+nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
+nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
+" nnoremap <silent><M-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+" nnoremap <silent><M-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Function Key Maps
