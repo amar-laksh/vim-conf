@@ -54,8 +54,8 @@ set number relativenumber
 au CursorHold * checktime
 
 set background=dark
-" let g:solarized_termcolors=256
+let g:solarized_termcolors=256
 colorscheme solarized
- "set termguicolors
+" set termguicolors
 
 

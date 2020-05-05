@@ -65,7 +65,7 @@ vmap <leader>cc :NERDCommToggleComment<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Auto-Format
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType notes,rust,yaml,vim,tex,yml,rst,md,markdown,Dockerfile,sh let b:autoformat_autoindent=0
+autocmd FileType notes,rust,yaml,vim,tex,yml,rst,md,markdown,Dockerfile,sh,python let b:autoformat_autoindent=0
 au BufWrite * :Autoformat
 let g:formatter_yapf_style = 'pep8'
 
