@@ -76,6 +76,7 @@ Plug 'NLKNguyen/papercolor-theme'
 "Plug 'morhetz/gruvbox'
 Plug 'altercation/vim-colors-solarized'
 Plug 'lifepillar/vim-solarized8'
+Plug 'junegunn/goyo.vim'
 "Icons
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
