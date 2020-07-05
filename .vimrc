@@ -56,6 +56,6 @@ au CursorHold * checktime
 set background=light
 let g:solarized_termcolors=256
 colorscheme solarized
-set termguicolors
+" set termguicolors
 
 

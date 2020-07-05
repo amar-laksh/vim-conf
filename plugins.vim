@@ -65,7 +65,7 @@ vmap <leader>cc :NERDCommToggleComment<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Auto-Format
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType notes,rust,yaml,vim,tex,yml,rst,md,markdown,Dockerfile,sh,python let b:autoformat_autoindent=0
+autocmd FileType notes,rust,yaml,vim,tex,yml,rst,md,markdown,Dockerfile,sh,python let b:autoformat_autoindent=1
 au BufWrite * :Autoformat
 let g:formatter_yapf_style = 'pep8'
 
@@ -74,8 +74,8 @@ let g:formatter_yapf_style = 'pep8'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " let g:ale_completion_enabled = 1
 " let g:ale_linters = {
-                        " \   'cpp': ['clang'],
-                        " \}
+" \   'cpp': ['clang'],
+" \}
 " let g:ale_cpp_clang_executable= 'clang++'
 " let g:ale_sign_error = '>>'
 " let g:ale_sign_warning = '--'
@@ -111,8 +111,8 @@ let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
 
 if has("autocmd")
-        au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-                                \| exe "normal! g'\"" | endif
+	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+				\| exe "normal! g'\"" | endif
 endif
 
 
@@ -138,10 +138,10 @@ endif
 " let g:LanguageClient_autoStart = 1
 "
 " let g:LanguageClient_serverCommands = {
-    " \ 'python': ['pyls'],
-    " \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    " \ 'javascript': ['javascript-typescript-stdio'],
-    " \ 'go': ['go-langserver'] }
+" \ 'python': ['pyls'],
+" \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+" \ 'javascript': ['javascript-typescript-stdio'],
+" \ 'go': ['go-langserver'] }
 "
 " noremap <silent> H :call LanguageClient_textDocument_hover()<CR>
 " noremap <silent> Z :call LanguageClient_textDocument_definition()<CR>
@@ -162,14 +162,14 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vimtex_view_enabled=0
 let g:vimtex_compiler_latexrun = {
-        \ 'options' : [
-        \   '-shell-escape' ,
-        \   '-verbose' ,
-        \   '-file-line-error',
-        \   '-synctex=1' ,
-        \   '-interaction=nonstopmode' ,
-        \ ],
-        \}
+			\ 'options' : [
+			\   '-shell-escape' ,
+			\   '-verbose' ,
+			\   '-file-line-error',
+			\   '-synctex=1' ,
+			\   '-interaction=nonstopmode' ,
+			\ ],
+			\}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git Gutter
