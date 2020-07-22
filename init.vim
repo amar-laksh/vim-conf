@@ -60,6 +60,7 @@ Plug 'skywind3000/asyncrun.vim'
 " Plug 'tpope/vim-dispatch'
 Plug 'milkypostman/vim-togglelist'
 " Plug 'mickaobrien/vim-stackoverflow'
+Plug 'KabbAmine/zeavim.vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fun Stuff Plugins
