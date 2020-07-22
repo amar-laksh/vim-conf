@@ -14,8 +14,8 @@
 " => vim-header
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:header_field_author = 'Amar Lakshya'
-let g:header_field_author_email = 'amar.lakshya@xaviers.edu.in'
-let g:header_auto_add_header = 0
+let g:header_field_author_email = 'amar.lakshya@protonmail.com'
+let g:header_auto_add_header = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

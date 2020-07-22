@@ -1,8 +1,8 @@
 " File              : init.vim
 " Author            : Amar Lakshya <amar.lakshya@xaviers.edu.in>
 " Date              : 31.03.2020
-" Last Modified Date: 31.03.2020
-" Last Modified By  : Amar Lakshya <amar.lakshya@xaviers.edu.in>
+" Last Modified Date: 22.07.2020
+" Last Modified By  : Amar Lakshya <amar.lakshya@protonmail.com>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -22,7 +22,6 @@ Plug 'airblade/vim-gitgutter'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Experience Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'tpope/vim-fugitive'
 Plug 'metakirby5/codi.vim'
 Plug 'alpertuna/vim-header'
 " Plug 'vim-scripts/a.vim'
@@ -40,8 +39,7 @@ Plug 'rstacruz/vim-closer'
 " Plug 'w0rp/ale'
 "Plug 'Rykka/riv.vim'
 "Plug 'racer-rust/vim-racer'
-Plug 'dkprice/vim-easygrep'
-Plug 'WolfgangMehner/bash-support'
+" Plug 'WolfgangMehner/bash-support'
 Plug 'prabirshrestha/async.vim'
 Plug 'majutsushi/tagbar'
 Plug 'terryma/vim-multiple-cursors'
@@ -61,6 +59,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'skywind3000/asyncrun.vim'
 " Plug 'tpope/vim-dispatch'
 Plug 'milkypostman/vim-togglelist'
+" Plug 'mickaobrien/vim-stackoverflow'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fun Stuff Plugins
