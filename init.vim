@@ -61,13 +61,14 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'milkypostman/vim-togglelist'
 " Plug 'mickaobrien/vim-stackoverflow'
 Plug 'KabbAmine/zeavim.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fun Stuff Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Plug 'TheSovietStorm/vim-radio'
 " Plug 'ryot4/diary.vim'
-Plug 'ActivityWatch/aw-watcher-vim'
+" Plug 'ActivityWatch/aw-watcher-vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Eye Candy Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

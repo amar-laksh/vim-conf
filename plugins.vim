@@ -1,8 +1,8 @@
 " File              : plugins.vim
 " Author            : Amar Lakshya <amar.lakshya@xaviers.edu.in>
 " Date              : 31.03.2020
-" Last Modified Date: 31.03.2020
-" Last Modified By  : Amar Lakshya <amar.lakshya@xaviers.edu.in>
+" Last Modified Date: 22.07.2020
+" Last Modified By  : Amar Lakshya <amar.lakshya@protonmail.com>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -15,7 +15,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:header_field_author = 'Amar Lakshya'
 let g:header_field_author_email = 'amar.lakshya@protonmail.com'
-let g:header_auto_add_header = 1
+let g:header_auto_add_header = 0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -65,7 +65,7 @@ vmap <leader>cc :NERDCommToggleComment<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Auto-Format
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType notes,rust,yaml,vim,tex,yml,rst,md,markdown,Dockerfile,sh,python let b:autoformat_autoindent=1
+autocmd FileType notes,rust,yaml,tex,yml,rst,md,markdown let b:autoformat_autoindent=0
 au BufWrite * :Autoformat
 let g:formatter_yapf_style = 'pep8'
 
