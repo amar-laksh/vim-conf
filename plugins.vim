@@ -32,7 +32,7 @@ let g:header_field_author = 'Amar Lakshya'
 " autocmd VimEnter * NERDTree
 " autocmd BufEnter * NERDTreeMirror
 "
-map <C-x> :NERDTreeToggle<CR>
+" map <C-x> :NERDTreeToggle<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -72,21 +72,66 @@ let g:formatter_yapf_style = 'pep8'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => ALE
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:ale_completion_enabled = 1
-" let g:ale_linters = {
-" \   'cpp': ['clang'],
-" \}
-" let g:ale_cpp_clang_executable= 'clang++'
-" let g:ale_sign_error = '>>'
-" let g:ale_sign_warning = '--'
-" let g:airline#extensions#ale#enabled = 1
+let g:ale_completion_enabled = 0
+let g:ale_sign_error = '🔥'
+let g:ale_sign_warning = '❓'
+let g:airline#extensions#ale#enabled = 1
+let g:ale_sign_column_always = 1
+let g:ale_completion_enabled = 0
+let b:ale_linters = {'rust': ['rls']}
+" nmap <leader><space>d :YcmCompleter GoTo<CR>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => YouCompleteMe
+" => coc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ycm_global_ycm_extra_conf = '/home/amar/.ycm_extra_conf.py'
-let g:ycm_autoclose_preview_window_after_completion = 1
-nmap <leader><space>d :YcmCompleter GoTo<CR>
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=194
+set pumheight=20
+set completeopt=menu,menuone
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <leader>d :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+	if (index(['vim','help'], &filetype) >= 0)
+		execute 'h '.expand('<cword>')
+	else
+		call CocAction('doHover')
+	endif
+endfunction
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+
+"Fzf preview
+nmap <Leader>f [fzf-p]
+xmap <Leader>f [fzf-p]
+
+nnoremap <silent> [fzf-p]p     :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
+nnoremap <silent> [fzf-p]gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
+nnoremap <silent> <Leader>ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
+nnoremap <silent> [fzf-p]b     :<C-u>CocCommand fzf-preview.Buffers<CR>
+nnoremap <silent> [fzf-p]B     :<C-u>CocCommand fzf-preview.AllBuffers<CR>
+nnoremap <silent> [fzf-p]o     :<C-u>CocCommand fzf-preview.FromResources buffer project_mru<CR>
+nnoremap <silent> [fzf-p]<C-o> :<C-u>CocCommand fzf-preview.Jumps<CR>
+nnoremap <silent> [fzf-p]g;    :<C-u>CocCommand fzf-preview.Changes<CR>
+nnoremap <silent> [fzf-p]/     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'"<CR>
+nnoremap <silent> [fzf-p]*     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'<C-r>=expand('<cword>')<CR>"<CR>
+nnoremap          [fzf-p]gr    :<C-u>CocCommand fzf-preview.ProjectGrep<Space>
+xnoremap          [fzf-p]gr    "sy:CocCommand   fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
+nnoremap <silent> [fzf-p]t     :<C-u>CocCommand fzf-preview.BufferTags<CR>
+nnoremap <silent> [fzf-p]q     :<C-u>CocCommand fzf-preview.QuickFix<CR>
+nnoremap <silent> [fzf-p]l     :<C-u>CocCommand fzf-preview.LocationList<CR>
+
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Numbertoggle
@@ -116,42 +161,13 @@ if has("autocmd")
 endif
 
 
-"##################Config for Powerline
-" set laststatus=2 statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-" let g:powerline_pycmd="py3"
-"
-
-
-"####################Config for radio
-" map <leader>r :let job1 = job_start(['bash','-c','python3 ~/.vim/plugged/vim-radio/vim-radio/vim-radio.py 0'])
-" nmap <leader>s :call job_stop(job1)<CR>
-"
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => KDE Devel
+" => Rust
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" << LSP >> {{{
+let g:racer_cmd = "/home/$USER/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
+let g:racer_insert_paren = 0
 
-" nnoremap <leader>lcs :LanguageClientStart<CR>
-"
-" " if you want it to turn on automatically
-" let g:LanguageClient_autoStart = 1
-"
-" let g:LanguageClient_serverCommands = {
-" \ 'python': ['pyls'],
-" \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-" \ 'javascript': ['javascript-typescript-stdio'],
-" \ 'go': ['go-langserver'] }
-"
-" noremap <silent> H :call LanguageClient_textDocument_hover()<CR>
-" noremap <silent> Z :call LanguageClient_textDocument_definition()<CR>
-" noremap <silent> R :call LanguageClient_textDocument_rename()<CR>
-" noremap <silent> S :call LanugageClient_textDocument_documentSymbol()<CR>
-" }}}
-" let g:lsp_log_verbose = 1
-" let g:lsp_log_file = expand('~/.vim-lsp.log')
-"
-"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Codi
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

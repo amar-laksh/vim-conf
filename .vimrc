@@ -53,9 +53,16 @@ set autoread
 set number relativenumber
 au CursorHold * checktime
 
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
+
 set background=light
 let g:solarized_termcolors=256
 colorscheme solarized
 " set termguicolors
+
+" Permanent Undo
+set undodir=~/.vimdid
+set undofile
 
 

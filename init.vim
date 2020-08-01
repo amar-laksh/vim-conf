@@ -15,51 +15,36 @@ call plug#begin('~/.vim/plugged')
 " => UI plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
-Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Experience Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'dense-analysis/ale'
+
 Plug 'metakirby5/codi.vim'
 Plug 'alpertuna/vim-header'
-" Plug 'vim-scripts/a.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Chiel92/vim-autoformat'
-"Plug 'vim-scripts/DoxygenToolkit.vim'
-Plug 'ycm-core/YouCompleteMe', {'do' : './install.py --clang-completer --java-completer' }
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-" Track the engine.
 Plug 'SirVer/ultisnips'
-" Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
 Plug 'machakann/vim-sandwich'
 Plug 'rstacruz/vim-closer'
-" Plug 'w0rp/ale'
-"Plug 'Rykka/riv.vim'
-"Plug 'racer-rust/vim-racer'
-" Plug 'WolfgangMehner/bash-support'
 Plug 'prabirshrestha/async.vim'
 " Plug 'majutsushi/tagbar'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
+
 Plug 'ervandew/supertab'
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"Plug 'igankevich/mesonic'
-" Plug 'prabirshrestha/vim-lsp'
-" Plug 'prabirshrestha/asyncomplete.vim'
-"
 Plug 'plasticboy/vim-markdown'
-" Plug 'xuhdev/vim-latex-live-preview'
-" Plug 'vim-latex/vim-latex'
 Plug 'lervag/vimtex'
 Plug 'plasticboy/vim-markdown'
-" Plug 'tpope/vim-dispatch'
-" Plug 'milkypostman/vim-togglelist'
-" Plug 'mickaobrien/vim-stackoverflow'
 Plug 'KabbAmine/zeavim.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'racer-rust/vim-racer'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fun Stuff Plugins
