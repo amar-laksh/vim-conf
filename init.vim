@@ -34,7 +34,6 @@ Plug 'honza/vim-snippets'
 Plug 'machakann/vim-sandwich'
 Plug 'rstacruz/vim-closer'
 Plug 'prabirshrestha/async.vim'
-" Plug 'majutsushi/tagbar'
 Plug 'terryma/vim-multiple-cursors'
 " Plug 'vim-syntastic/syntastic'
 
@@ -56,11 +55,9 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " => Eye Candy Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Themes
-Plug 'NLKNguyen/papercolor-theme'
-"Plug 'morhetz/gruvbox'
-Plug 'altercation/vim-colors-solarized'
+Plug 'arzg/vim-corvine'
+" Plug 'altercation/vim-colors-solarized'
 Plug 'lifepillar/vim-solarized8'
-" Plug 'junegunn/goyo.vim'
 "Icons
 Plug 'ryanoasis/vim-devicons'
 call plug#end()

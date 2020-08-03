@@ -57,8 +57,8 @@ highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 
 set background=light
-let g:solarized_termcolors=256
-colorscheme solarized
+let g:solarized_use16=1
+colorscheme solarized8_flat
 " set termguicolors
 
 " Permanent Undo
