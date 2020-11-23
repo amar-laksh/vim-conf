@@ -23,9 +23,10 @@ nnoremap <C-g> :e#<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
 nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
+noremap  <Leader>rs :s/ \{2,}/ /g<CR>
 " nnoremap <silent><M-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
 " nnoremap <silent><M-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
-
+"sdfsdf sdfsdf sdf sdfs df sdfsdf s
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Function Key Maps
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -35,3 +36,5 @@ nnoremap <F4> :AddHeader<CR>
 nnoremap <F5> :Codi<CR>
 nnoremap <F8> :TagbarToggle<CR>
 nnoremap <F9> :call ToggleQuickfixList()<CR>
+
+nnoremap <F10> :put =strftime('%d-%m-%Y')<CR>

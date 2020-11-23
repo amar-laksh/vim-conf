@@ -57,12 +57,16 @@ highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 
 set background=light
-let g:solarized_use16=1
-colorscheme solarized8_flat
+let g:solarized_termcolors=256
+" let g:solarized_termtrans=1
+colorscheme solarized
 " set termguicolors
 
 " Permanent Undo
 set undodir=~/.vimdid
 set undofile
 
+set tabstop=4
+set shiftwidth=4
+set expandtab
 

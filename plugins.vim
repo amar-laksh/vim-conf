@@ -65,8 +65,8 @@ vmap <leader>cc :NERDCommToggleComment<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Auto-Format
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType notes,rust,yaml,tex,yml,rst,md,markdown let b:autoformat_autoindent=0
-au BufWrite * :Autoformat
+autocmd FileType notes,rust,yaml,tex,yml,rst,md,markdown,sql let b:autoformat_autoindent=0
+" au BufWrite * :Autoformat
 let g:formatter_yapf_style = 'pep8'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -100,11 +100,11 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <leader>d :call <SID>show_documentation()<CR>
 function! s:show_documentation()
-	if (index(['vim','help'], &filetype) >= 0)
-		execute 'h '.expand('<cword>')
-	else
-		call CocAction('doHover')
-	endif
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    else
+        call CocAction('doHover')
+    endif
 endfunction
 
 " Symbol renaming.
@@ -158,8 +158,8 @@ let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
 
 if has("autocmd")
-	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-				\| exe "normal! g'\"" | endif
+    au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+                \| exe "normal! g'\"" | endif
 endif
 
 
@@ -180,14 +180,14 @@ let g:racer_insert_paren = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vimtex_view_enabled=0
 let g:vimtex_compiler_latexrun = {
-			\ 'options' : [
-			\   '-shell-escape' ,
-			\   '-verbose' ,
-			\   '-file-line-error',
-			\   '-synctex=1' ,
-			\   '-interaction=nonstopmode' ,
-			\ ],
-			\}
+            \ 'options' : [
+            \   '-shell-escape' ,
+            \   '-verbose' ,
+            \   '-file-line-error',
+            \   '-synctex=1' ,
+            \   '-interaction=nonstopmode' ,
+            \ ],
+            \}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git Gutter

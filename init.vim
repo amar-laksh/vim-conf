@@ -55,9 +55,10 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " => Eye Candy Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Themes
-Plug 'arzg/vim-corvine'
-" Plug 'altercation/vim-colors-solarized'
-Plug 'lifepillar/vim-solarized8'
+Plug 'altercation/vim-colors-solarized'
 "Icons
 Plug 'ryanoasis/vim-devicons'
+
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
 call plug#end()
