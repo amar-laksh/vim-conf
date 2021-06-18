@@ -43,6 +43,7 @@ Plug 'lervag/vimtex'
 Plug 'plasticboy/vim-markdown'
 Plug 'KabbAmine/zeavim.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'Olical/conjure'
 " Plug 'racer-rust/vim-racer'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -50,6 +51,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Plug 'TheSovietStorm/vim-radio'
 " Plug 'ryot4/diary.vim'
+Plug 'nightsense/night-and-day'
 " Plug 'ActivityWatch/aw-watcher-vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Eye Candy Plugins
@@ -60,5 +62,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+Plug 'homembaixinho/p5.vim'
 
 call plug#end()
