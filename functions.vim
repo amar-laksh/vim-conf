@@ -30,3 +30,15 @@ if !exists("g:toggle_list_no_mappings")
 	nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
 	nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
 endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Coq functions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+function! AllCoq()
+    if(&ft=='coq')
+        :let lines=line('$')
+        :execute &lines"CoqNext"
+    endif
+endfunction
+

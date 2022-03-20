@@ -40,3 +40,8 @@ autocmd VimLeave *.tex !rm *.aux *.log *.spl *.gz *.fls *.fdb_latexmk *.bbl *.bl
 " => YAML
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => v (Coq files)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufNewFile,BufRead *.v set filetype=coq

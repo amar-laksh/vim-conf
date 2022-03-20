@@ -78,7 +78,8 @@ let g:ale_sign_warning = '❓'
 let g:airline#extensions#ale#enabled = 1
 let g:ale_sign_column_always = 1
 let g:ale_completion_enabled = 0
-let b:ale_linters = {'rust': ['rls']}
+let b:ale_linters = {'rust': ['rls'], 'python': ['flake8', 'pylink']}
+let b:ale_fixers = ['autopep8', 'yapf']
 " nmap <leader><space>d :YcmCompleter GoTo<CR>
 
 
@@ -181,13 +182,13 @@ let g:racer_insert_paren = 0
 let g:vimtex_view_enabled=0
 let g:vimtex_compiler_latexrun = {
             \ 'options' : [
-            \   '-shell-escape' ,
-            \   '-verbose' ,
-            \   '-file-line-error',
-            \   '-synctex=1' ,
-            \   '-interaction=nonstopmode' ,
-            \ ],
-            \}
+                \   '-shell-escape' ,
+                \   '-verbose' ,
+                \   '-file-line-error',
+                \   '-synctex=1' ,
+                \   '-interaction=nonstopmode' ,
+                \ ],
+                \}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim Diary
@@ -203,6 +204,17 @@ let g:asyncrun_open=1
 " => Night and Day
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:nd_themes = [
-  \ ['5:00', 'solarized',            'light' ],
-  \ ['20:00', 'solarized',            'dark'  ],
-  \ ]
+            \ ['5:00', 'solarized',            'light' ],
+            \ ['20:00', 'solarized',            'dark'  ],
+            \ ]
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Markdown
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vim_markdown_folding_disabled = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Coq
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let  g:coqtail_nomap = 1
+au BufWrite *.v :call AllCoq()

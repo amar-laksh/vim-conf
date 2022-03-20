@@ -39,12 +39,14 @@ Plug 'terryma/vim-multiple-cursors'
 
 Plug 'ervandew/supertab'
 Plug 'plasticboy/vim-markdown'
+Plug 'shime/vim-livedown'
 Plug 'lervag/vimtex'
-Plug 'plasticboy/vim-markdown'
 Plug 'KabbAmine/zeavim.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'Olical/conjure'
 " Plug 'racer-rust/vim-racer'
+"
+Plug 'whonore/Coqtail'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fun Stuff Plugins

@@ -30,11 +30,11 @@ noremap  <Leader>rs :s/ \{2,}/ /g<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Function Key Maps
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 nnoremap <F2> :Git<CR>
 nnoremap <F3> :NERDTreeToggle<CR>
 nnoremap <F4> :AddHeader<CR>
 nnoremap <F5> :Codi<CR>
 nnoremap <F8> :TagbarToggle<CR>
-nnoremap <F9> :call ToggleQuickfixList()<CR>
-
+nnoremap <F9> :exec AllCoq()<CR>
 nnoremap <F10> :put =strftime('%d-%m-%Y')<CR>
