@@ -46,6 +46,13 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'Olical/conjure'
 " Plug 'racer-rust/vim-racer'
 "
+" Function stuff
+" Haskell
+Plug 'neovimhaskell/haskell-vim'
+" Plug 'haskell/stylish-haskell'
+Plug 'sebmaynard/vim-ligatures'
+" Plug 'alx741/vim-hindent'
+
 Plug 'whonore/Coqtail'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

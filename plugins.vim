@@ -78,8 +78,9 @@ let g:ale_sign_warning = '❓'
 let g:airline#extensions#ale#enabled = 1
 let g:ale_sign_column_always = 1
 let g:ale_completion_enabled = 0
-let b:ale_linters = {'rust': ['rls'], 'python': ['flake8', 'pylink']}
+let b:ale_linters = {'rust': ['rls'], 'python': ['flake8', 'pylink'], 'haskell' :['stack-ghc', 'hlint']}
 let b:ale_fixers = ['autopep8', 'yapf']
+"let g:autoformat_verbosemode=1
 " nmap <leader><space>d :YcmCompleter GoTo<CR>
 
 

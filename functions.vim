@@ -38,7 +38,8 @@ endif
 function! AllCoq()
     if(&ft=='coq')
         :let lines=line('$')
-        :execute &lines"CoqNext"
+        :execute lines"CoqNext"
+        :echom "sending:"lines"lines to Coq"
     endif
 endfunction
 
