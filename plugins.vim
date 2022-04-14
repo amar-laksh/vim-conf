@@ -224,7 +224,13 @@ au BufWrite *.v :call AllCoq()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => LanguageClient
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:LanguageClient_serverCommands = {'cpp': ['clangd']}
+let s:ccls_settings = {
+            \ 'highlight': { 'lsRanges' : v:true },
+            \ }
+
+let s:ccls_command = ['ccls', '-init=' . json_encode(s:ccls_settings)]
+let g:LanguageClient_serverCommands = {'cpp': s:ccls_command, 'c': ['ccls']}
+let g:lsp_cxx_hl_use_text_props = 1
 let g:LanguageClient_virtualTextPrefix = '                                     '
 function SetLSPShortcuts()
     nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>

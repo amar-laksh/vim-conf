@@ -51,6 +51,7 @@ Plug 'autozimu/LanguageClient-neovim', {
             \ 'do': 'bash install.sh',
             \ } " Main lsp plugin
 Plug 'Shougo/echodoc.vim'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 Plug 'romgrk/barbar.nvim' " Buffer tabs
 
