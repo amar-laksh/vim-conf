@@ -18,35 +18,57 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Experience Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 
-Plug 'metakirby5/codi.vim'
-Plug 'alpertuna/vim-header'
-Plug 'scrooloose/nerdcommenter'
-Plug 'Chiel92/vim-autoformat'
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'machakann/vim-sandwich'
-Plug 'rstacruz/vim-closer'
-Plug 'prabirshrestha/async.vim'
-Plug 'terryma/vim-multiple-cursors'
-" Plug 'vim-syntastic/syntastic'
+" Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 install.py --clangd-completer' } " Nothing is complete without You!
+Plug 'metakirby5/codi.vim' " Python repl in buffer
+Plug 'alpertuna/vim-header' " Adds header to files
+Plug 'scrooloose/nerdcommenter' "Comment god
+Plug 'Chiel92/vim-autoformat' "Formatting god
+Plug 'SirVer/ultisnips' "Snippets engine
+Plug 'honza/vim-snippets' " Snippets list
 
-Plug 'ervandew/supertab'
+if has('nvim') " Cool completiion engine
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+
+Plug 'machakann/vim-sandwich' " perform operations between pairs of symbols
+Plug 'rstacruz/vim-closer' "Brackets god
+"Plug 'prabirshrestha/async.vim'
+Plug 'terryma/vim-multiple-cursors' " yep
+Plug 'epheien/termdbg'
+Plug 'autozimu/LanguageClient-neovim', {
+            \ 'branch': 'next',
+            \ 'do': 'bash install.sh',
+            \ } " Main lsp plugin
+Plug 'Shougo/echodoc.vim'
+
+Plug 'romgrk/barbar.nvim' " Buffer tabs
+
+"Plug 'ervandew/supertab' "
 Plug 'plasticboy/vim-markdown'
-Plug 'shime/vim-livedown'
-Plug 'lervag/vimtex'
-Plug 'KabbAmine/zeavim.vim'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'Olical/conjure'
+" Plug 'shime/vim-livedown'
+Plug 'lervag/vimtex' "Latex support
+Plug 'KabbAmine/zeavim.vim' "Zeal support
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Go support
+Plug 'severin-lemaignan/vim-minimap'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Language parsing and syntax highlighting
+"Plug 'wfxr/minimap.vim'
+
 " Plug 'racer-rust/vim-racer'
+
 "
-" Function stuff
+" Functional stuff
 " Haskell
 Plug 'neovimhaskell/haskell-vim'
 " Plug 'haskell/stylish-haskell'
@@ -69,6 +91,7 @@ Plug 'nightsense/night-and-day'
 Plug 'altercation/vim-colors-solarized'
 "Icons
 Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
