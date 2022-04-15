@@ -63,44 +63,34 @@ vmap <leader>cc :NERDCommToggleComment<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Auto-Format
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType notes,rust,yaml,tex,yml,rst,md,markdown,sql let b:autoformat_autoindent=0
-autocmd FileType hpp let b:autoformat_autoindent=1
-au BufWrite * :Autoformat
-let g:formatter_yapf_style = 'pep8'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => ALE
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ale_completion_enabled = 0
-let g:ale_sign_error = '🔥'
-let g:ale_sign_warning = '❓'
-let g:airline#extensions#ale#enabled = 1
-let g:ale_sign_column_always = 1
-let g:ale_completion_enabled = 0
-let b:ale_linters = {'rust': ['rls'], 'python': ['flake8', 'pylink'], 'haskell' :['stack-ghc', 'hlint']}
-let b:ale_fixers = ['autopep8', 'yapf']
-"let g:autoformat_verbosemode=1
-" nmap <leader><space>d :YcmCompleter GoTo<CR>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => coc
+" => CoC
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
 set updatetime=194
 set pumheight=20
 set completeopt=menu,menuone
-
-" Highlight the symbol and its references when holding the cursor.
+set shortmess+=c
+"
+" " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
-" GoTo code navigation.
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+nmap <leader>rn <Plug>(coc-rename)
+" nmap <leader>cl  <Plug>(coc-codelens-action)
+nmap <leader>d :call <SID>show_documentation()<CR>
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>d :call <SID>show_documentation()<CR>
 function! s:show_documentation()
     if (index(['vim','help'], &filetype) >= 0)
@@ -109,34 +99,19 @@ function! s:show_documentation()
         call CocAction('doHover')
     endif
 endfunction
+augroup mygroup
+    autocmd!
+    " Setup formatexpr specified filetype(s).
+    autocmd FileType cpp,hpp setl formatexpr=CocAction('formatSelected')
+    " Update signature help on jump placeholder.
+autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
 
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+command! -nargs=0 Format :call CocActionAsync('format')
+" au BufWrite * :Autoformat
 
-"Fzf preview
-let g:fzf_preview_floating_window_rate = 0.6
-let g:fzf_preview_use_dev_icons = 1
-nmap <Leader> [fzf-p]
-xmap <Leader> [fzf-p]
-
-nnoremap <silent> [fzf-p]p     :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
-nnoremap <silent> [fzf-p]gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
-nnoremap <silent> [fzf-p]ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
-nnoremap <silent> [fzf-p]b     :<C-u>CocCommand fzf-preview.Buffers<CR>
-nnoremap <silent> [fzf-p]B     :<C-u>CocCommand fzf-preview.AllBuffers<CR>
-nnoremap <silent> [fzf-p]o     :<C-u>CocCommand fzf-preview.FromResources buffer project_mru<CR>
-nnoremap <silent> [fzf-p]<C-o> :<C-u>CocCommand fzf-preview.Jumps<CR>
-nnoremap <silent> [fzf-p]g;    :<C-u>CocCommand fzf-preview.Changes<CR>
-nnoremap <silent> [fzf-p]/     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'"<CR>
-nnoremap <silent> [fzf-p]*     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'<C-r>=expand('<cword>')<CR>"<CR>
-nnoremap          [fzf-p]gr    :<C-u>CocCommand fzf-preview.ProjectGrep<Space>
-xnoremap          [fzf-p]gr    "sy:CocCommand   fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
-nnoremap <silent> [fzf-p]t     :<C-u>CocCommand fzf-preview.BufferTags<CR>
-nnoremap <silent> [fzf-p]q     :<C-u>CocCommand fzf-preview.QuickFix<CR>
-nnoremap <silent> [fzf-p]l     :<C-u>CocCommand fzf-preview.LocationList<CR>
-
-
+" nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Numbertoggle
@@ -147,11 +122,16 @@ nnoremap <silent> <C-]> :set relativenumber!<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => FZF
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" "Fzf preview
+let g:fzf_preview_floating_window_rate = 0.6
+let g:fzf_preview_use_dev_icons = 1
+
 nnoremap <C-p> :FZF<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => UltiSnips and SuperTab
-"    f    """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " let g:SuperTabDefaultCompletionType    = '<C-n>'
 " let g:SuperTabCrMapping                = 0
 " let g:UltiSnipsExpandTrigger           = '<tab>'
@@ -206,7 +186,7 @@ let g:asyncrun_open=1
 " => Night and Day
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:nd_themes = [
-            \ ['5:00', 'solarized',            'light' ],
+            \ ['5:00', 'solarized',            'dark' ],
             \ ['20:00', 'solarized',            'dark'  ],
             \ ]
 
@@ -222,58 +202,25 @@ let  g:coqtail_nomap = 1
 au BufWrite *.v :call AllCoq()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => LanguageClient
+" => rainbow
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let s:ccls_settings = {
-            \ 'highlight': { 'lsRanges' : v:true },
-            \ }
+hi! link RainbowLevel0 Constant
+hi! link RainbowLevel1 Type
+hi! link RainbowLevel2 Function
+hi! link RainbowLevel3 String
+hi! link RainbowLevel4 PreProc
+hi! link RainbowLevel5 Statement
+hi! link RainbowLevel6 Identifier
+hi! link RainbowLevel7 Normal
+hi! link RainbowLevel8 Comment
 
-let s:ccls_command = ['ccls', '-init=' . json_encode(s:ccls_settings)]
-let g:LanguageClient_serverCommands = {'cpp': s:ccls_command, 'c': ['ccls']}
-let g:lsp_cxx_hl_use_text_props = 1
-let g:LanguageClient_virtualTextPrefix = '                                     '
-function SetLSPShortcuts()
-    nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
-    nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
-    nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
-    nnoremap <leader>lt :call LanguageClient#textDocument_typeDefinition()<CR>
-    nnoremap <leader>lx :call LanguageClient#textDocument_references()<CR>
-    nnoremap <leader>la :call LanguageClient_workspace_applyEdit()<CR>
-    nnoremap <leader>lc :call LanguageClient#textDocument_completion()<CR>
-    nnoremap <leader>lh :call LanguageClient#textDocument_hover()<CR>
-    nnoremap <leader>ls :call LanguageClient_textDocument_documentSymbol()<CR>
-    nnoremap <leader>lm :call LanguageClient_contextMenu()<CR>
-endfunction()
-
-augroup LSP
-    autocmd!
-    autocmd FileType cpp,c call SetLSPShortcuts()
-augroup END
-
-set signcolumn=yes
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => echodoc
+" => Airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set cmdheight=2
-let g:echodoc#enable_at_startup = 1
-let g:echodoc#type = 'echo'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline_highlighting_cache = 1
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => deoplete
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete = 0
 
-" imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-" smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-" xmap <C-k>     <Plug>(neosnippet_expand_target)
-"
-" imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-"
-
-" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-" \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+let g:context_nvim_no_redraw = 1
