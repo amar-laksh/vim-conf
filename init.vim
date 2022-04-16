@@ -30,10 +30,10 @@ Plug 'honza/vim-snippets' " Snippets list
 
 Plug 'machakann/vim-sandwich' " perform operations between pairs of symbols
 Plug 'rstacruz/vim-closer' "Brackets god
-"Plug 'prabirshrestha/async.vim'
 Plug 'terryma/vim-multiple-cursors' " yep
 Plug 'epheien/termdbg'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jeetsukumaran/vim-indentwise'
 
 Plug 'plasticboy/vim-markdown'
 " Plug 'shime/vim-livedown'
@@ -43,8 +43,6 @@ Plug 'KabbAmine/zeavim.vim' "Zeal support
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Language parsing and syntax highlighting
 Plug 'thiagoalessio/rainbow_levels.vim' "Toggle scope level coloring
-" Plug 'romgrk/nvim-treesitter-context' "Show context in file
-" Plug 'Yggdroot/indentLine'
 Plug 'nvim-treesitter/nvim-treesitter-refactor' " Scope highlighting
 Plug 'wellle/context.vim' " Context bar on top
 
@@ -129,7 +127,6 @@ set cursorline
 set mouse=a
 set autoread
 set number relativenumber
-" au CursorHold * checktime
 
 set background=light
 let g:solarized_termcolors=256
