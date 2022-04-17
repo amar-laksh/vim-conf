@@ -31,57 +31,52 @@ Plug 'honza/vim-snippets' " Snippets list
 Plug 'machakann/vim-sandwich' " perform operations between pairs of symbols
 Plug 'rstacruz/vim-closer' "Brackets god
 Plug 'terryma/vim-multiple-cursors' " yep
-Plug 'epheien/termdbg'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'jeetsukumaran/vim-indentwise'
+Plug 'epheien/termdbg' "Terminal debugging
+Plug 'neoclide/coc.nvim', {'branch': 'release'} "main lsp engine
+Plug 'jeetsukumaran/vim-indentwise' " Moving across indent blocks
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Language parsing and syntax highlighting
+Plug 'thiagoalessio/rainbow_levels.vim' "Toggle scope level coloring
+Plug 'nvim-treesitter/nvim-treesitter-refactor' " Scope highlighting
+Plug 'wellle/context.vim' " Context bar on top
+Plug 'plasticboy/vim-markdown' 
 
-Plug 'plasticboy/vim-markdown'
 " Plug 'shime/vim-livedown'
 Plug 'lervag/vimtex' "Latex support
 Plug 'KabbAmine/zeavim.vim' "Zeal support
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Go support
 
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Language parsing and syntax highlighting
-Plug 'thiagoalessio/rainbow_levels.vim' "Toggle scope level coloring
-Plug 'nvim-treesitter/nvim-treesitter-refactor' " Scope highlighting
-Plug 'wellle/context.vim' " Context bar on top
-
-
-" Plug 'racer-rust/vim-racer'
+" Plug 'racer-rust/vim-racer' "Rust support
 "
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
 
 "
 " Functional stuff
 " Haskell
 Plug 'neovimhaskell/haskell-vim'
 " Plug 'haskell/stylish-haskell'
-Plug 'sebmaynard/vim-ligatures'
 " Plug 'alx741/vim-hindent'
 Plug 'whonore/Coqtail'
-
 " Plug 'dstein64/vim-startuptime'
+
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'homembaixinho/p5.vim'
+"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fun Stuff Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Plug 'TheSovietStorm/vim-radio'
-" Plug 'ryot4/diary.vim'
-" Plug 'nightsense/night-and-day'
+Plug 'nightsense/night-and-day'
 " Plug 'ActivityWatch/aw-watcher-vim'
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Eye Candy Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Themes
 Plug 'altercation/vim-colors-solarized'
 "Icons
+Plug 'sebmaynard/vim-ligatures'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
-
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-
-Plug 'homembaixinho/p5.vim'
 
 call plug#end()
 
@@ -143,29 +138,4 @@ set shiftwidth=4
 set expandtab
 
 " let g:python3_host_prog='C:\Users\AmarLakshya\AppData\Local\Programs\Python\Python310\python.exe'
-"
-"
-lua << EOF
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
-  },
 
-  refactor = {
-    highlight_definitions = {
-      enable = true,
-      -- Set to false if you have an `updatetime` of ~100.
-      clear_on_cursor_move = true,
-    },
-  },
-
-  refactor = {
-    highlight_current_scope = { enable = true },
-  },
-}
-EOF
