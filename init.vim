@@ -25,11 +25,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'metakirby5/codi.vim' " Python repl in buffer
 Plug 'alpertuna/vim-header' " Adds header to files
 Plug 'scrooloose/nerdcommenter' "Comment god
+Plug 'jiangmiao/auto-pairs' "pairs god
 Plug 'SirVer/ultisnips' "Snippets engine
 Plug 'honza/vim-snippets' " Snippets list
 
 Plug 'machakann/vim-sandwich' " perform operations between pairs of symbols
-Plug 'rstacruz/vim-closer' "Brackets god
 Plug 'terryma/vim-multiple-cursors' " yep
 Plug 'epheien/termdbg' "Terminal debugging
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "main lsp engine
@@ -61,6 +61,8 @@ Plug 'whonore/Coqtail'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'homembaixinho/p5.vim'
+
+Plug 'lewis6991/spellsitter.nvim' "spellcheck using treesitter
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fun Stuff Plugins
@@ -72,7 +74,7 @@ Plug 'nightsense/night-and-day'
 " => Eye Candy Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Themes
-Plug 'altercation/vim-colors-solarized'
+Plug 'overcache/NeoSolarized'
 "Icons
 Plug 'sebmaynard/vim-ligatures'
 Plug 'ryanoasis/vim-devicons'
@@ -101,13 +103,31 @@ source  ~/.vim-conf/macros.vim
 source  ~/.vim-conf/functions.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => INCLUDE FILETYPE SETUPS
+" => INCLUDE FILE TYPE SETUPS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source  ~/.vim-conf/ftypes.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Same includes but for windows
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has('win32') || has ('win64')
+    source  ~\AppData\Local\nvim\plugins.vim
+
+    source  ~\AppData\Local\nvim\maps.vim
+
+    source  ~\AppData\Local\nvim\macros.vim
+
+    source  ~\AppData\Local\nvim\functions.vim
+
+    source  ~\AppData\Local\nvim\ftypes.vim
+endif
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => BASIC CONFIGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set spell
 syntax on
 set hidden
 set exrc
@@ -117,17 +137,17 @@ set encoding=UTF-8
 set list listchars=tab:→\ ,nbsp:‡,trail:•,extends:>,precedes:<
 set showbreak=\\ " [bonus]
 set hlsearch
-set spell spelllang=en_gb
+" set spell spelllang=en_gb
 set cursorline
 set mouse=a
 set autoread
 set number relativenumber
 
 set background=light
-let g:solarized_termcolors=256
 " let g:solarized_termtrans=1
-colorscheme solarized
-" set termguicolors
+let g:solarized_termcolors=256
+colorscheme NeoSolarized
+set termguicolors
 
 " Permanent Undo
 set undodir=~/.vimdid
@@ -137,5 +157,6 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" let g:python3_host_prog='C:\Users\AmarLakshya\AppData\Local\Programs\Python\Python310\python.exe'
-
+if has('win32')
+    let g:python3_host_prog='~\AppData\Local\Programs\Python\Python310\python.exe'
+endif

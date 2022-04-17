@@ -17,13 +17,6 @@ let g:header_field_author = 'Amar Lakshya'
 let g:header_field_author_email = 'amar.lakshya@protonmail.com'
 let g:header_auto_add_header = 0
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => TagBar
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" autocmd VimEnter * TagbarToggle
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NERDCommenter
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -162,8 +155,8 @@ let g:asyncrun_open=1
 " => Night and Day
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:nd_themes = [
-            \ ['5:00', 'solarized',            'light' ],
-            \ ['19:00', 'solarized',            'dark'  ],
+            \ ['5:00', 'NeoSolarized',            'light' ],
+            \ ['19:00', 'NeoSolarized',            'light'  ],
             \ ]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -208,10 +201,6 @@ lua << EOF
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
 
@@ -226,5 +215,15 @@ require'nvim-treesitter.configs'.setup {
   refactor = {
     highlight_current_scope = { enable = true },
   },
+}
+EOF
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Spell sitter
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua << EOF
+require('spellsitter').setup {
+  -- Whether enabled, can be a list of filetypes, e.g. {'python', 'lua'}
+  enable = true,
 }
 EOF
