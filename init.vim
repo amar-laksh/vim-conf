@@ -17,6 +17,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
+Plug 'karb94/neoscroll.nvim'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -39,8 +40,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Language parsing a
 Plug 'thiagoalessio/rainbow_levels.vim' "Toggle scope level coloring
 Plug 'nvim-treesitter/nvim-treesitter-refactor' " Scope highlighting
 Plug 'wellle/context.vim' " Context bar on top
-Plug 'plasticboy/vim-markdown' 
 
+Plug 'plasticboy/vim-markdown' 
 " Plug 'shime/vim-livedown'
 Plug 'lervag/vimtex' "Latex support
 Plug 'KabbAmine/zeavim.vim' "Zeal support
@@ -63,8 +64,9 @@ Plug 'whonore/Coqtail'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'homembaixinho/p5.vim'
-
 Plug 'lewis6991/spellsitter.nvim' "spellcheck using treesitter
+Plug 'stevearc/aerial.nvim'
+
 " Plug 'rrethy/vim-illuminate'
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
