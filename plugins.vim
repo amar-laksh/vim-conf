@@ -155,8 +155,8 @@ let g:asyncrun_open=1
 " => Night and Day
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:nd_themes = [
-            \ ['5:00', 'NeoSolarized',            'light' ],
-            \ ['19:00', 'NeoSolarized',            'dark'  ],
+            \ ['5:00', 'gruvbox-material',            'light' ],
+            \ ['19:00', 'gruvbox-material',            'light'  ],
             \ ]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -288,4 +288,24 @@ require('nvim-terminal').setup({
         {keymap = '<leader>5'},
     },
 })
+EOF
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => marks
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua << EOF
+require('marks').setup {
+  default_mappings = true,
+  builtin_marks = { ".", "<", ">", "^" },
+  cyclic = true,
+  force_write_shada = false,
+  refresh_interval = 250,
+  sign_priority = { lower=10, upper=15, builtin=8, bookmark=20 },
+  excluded_filetypes = {},
+  bookmark_0 = {
+    sign = "⚑",
+    virt_text = "hello world"
+  },
+  mappings = {}
+}
 EOF

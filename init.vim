@@ -28,6 +28,7 @@ Plug 'scrooloose/nerdcommenter' "Comment god
 Plug 'jiangmiao/auto-pairs' "pairs god
 Plug 'SirVer/ultisnips' "Snippets engine
 Plug 'honza/vim-snippets' " Snippets list
+Plug 'chentau/marks.nvim' " better marks support
 
 Plug 'machakann/vim-sandwich' " perform operations between pairs of symbols
 Plug 'terryma/vim-multiple-cursors' " yep
@@ -64,6 +65,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 Plug 'homembaixinho/p5.vim'
 
 Plug 'lewis6991/spellsitter.nvim' "spellcheck using treesitter
+" Plug 'rrethy/vim-illuminate'
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fun Stuff Plugins
@@ -76,6 +78,7 @@ Plug 'nightsense/night-and-day'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Themes
 Plug 'overcache/NeoSolarized'
+Plug 'sainnhe/gruvbox-material'
 "Icons
 Plug 'sebmaynard/vim-ligatures'
 Plug 'ryanoasis/vim-devicons'
@@ -149,7 +152,9 @@ set number relativenumber
 set background=light
 " let g:solarized_termtrans=1
 let g:solarized_termcolors=256
-colorscheme NeoSolarized
+colorscheme gruvbox-material
+let g:gruvbox_material_background = 'soft'
+let g:airline_theme = 'gruvbox_material'
 set termguicolors
 
 " Permanent Undo
