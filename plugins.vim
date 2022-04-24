@@ -349,3 +349,8 @@ require("aerial").setup({
   end
 })
 EOF
+
+
+if has('unix')
+    let g:gruvbox_material_transparent_background = 1
+endif
