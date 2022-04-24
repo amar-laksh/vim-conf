@@ -43,3 +43,37 @@ function! AllCoq()
     endif
 endfunction
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Automatic C/C++ header file guards
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! s:insert_header()
+  let filename = expand("%:t")
+  execute "normal! i/* "
+  execute "normal! o" . filename
+  execute "normal! o"
+  execute "normal! oTODO: Description "
+  execute "normal! o"
+  execute "normal! o/"
+  normal! o
+  normal! o
+endfunction
+autocmd BufNewFile *.{h,c,hpp,cpp} call <SID>insert_header()
+
+" Automatic C / C++ header guards
+function! s:insert_gates()
+  let gatename = "__" . substitute(toupper(expand("%:t")), "\\.", "_", "g")
+  execute "normal! i#ifndef " . gatename
+  execute "normal! o#define " . gatename . " "
+  normal! o
+  execute "normal! Go#endif /* " . gatename . " */"
+  normal! k
+endfunction
+autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
+
+" Automatic header file inclusion (foo.c includes foo.h)
+function! s:insert_header_incl()
+  let filename = expand("%:t")
+  execute "normal! i#include " . "\"" . substitute(filename, "\\.c", "\\.h", "g") . "\""
+  normal! o
+endfunction
+autocmd BufNewFile *.{c,cpp} call <SID>insert_header_incl()

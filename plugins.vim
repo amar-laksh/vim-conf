@@ -67,6 +67,8 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 nmap <leader>rn <Plug>(coc-rename)
 " nmap <leader>cl  <Plug>(coc-codelens-action)
@@ -89,7 +91,7 @@ augroup mygroup
 autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-command! -nargs=0 Format :call CocActionAsync('format')
+" command! -nargs=0 Format :call CocActionAsync('format')
 
 nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
 "

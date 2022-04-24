@@ -1,9 +1,0 @@
-{
-    "coc.preferences.formatOnSaveFiletypes": ["cpp"],
-    "coc.preferences.formatOnSave": true,
-    "clangd.arguments": [
-        "--background-index",
-        "--clang-tidy",
-        "-clang-tidy-checks=readability-*, performance-*,-google-*,-llvimlibc-*,cppcoreguidelines-*"
-    ]
-}
