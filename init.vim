@@ -20,6 +20,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'karb94/neoscroll.nvim'
 Plug 'rrethy/vim-illuminate'
 Plug 'Xuyuanp/scrollbar.nvim'
+Plug 'lewis6991/nvim-treesitter-context'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
