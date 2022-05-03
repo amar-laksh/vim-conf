@@ -235,10 +235,6 @@ EOF
 " => terminal
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 tnoremap <ESC> <C-\><C-n>
-if has('win32') || has('win64')
-    set shell=powershell.exe
-
-endif
 lua << EOF
 vim.o.hidden = true
 require('nvim-terminal').setup({
