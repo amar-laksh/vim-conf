@@ -219,7 +219,10 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
-
+" Folding
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+set nofoldenable
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell sitter
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
