@@ -70,7 +70,6 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 
-nmap <leader>rn <Plug>(coc-rename)
 " nmap <leader>cl  <Plug>(coc-codelens-action)
 nmap <leader>d :call <SID>show_documentation()<CR>
 " Symbol renaming.
@@ -86,12 +85,12 @@ endfunction
 augroup mygroup
     autocmd!
     " Setup formatexpr specified filetype(s).
-    autocmd FileType cpp,hpp setl formatexpr=CocAction('formatSelected')
+    autocmd FileType cpp,hpp,hs setl formatexpr=CocAction('formatSelected')
     " Update signature help on jump placeholder.
 autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-" command! -nargs=0 Format :call CocActionAsync('format')
+ command! -nargs=0 Format :call CocActionAsync('format')
 
 nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
 "
